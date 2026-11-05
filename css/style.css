@@ -1,0 +1,161 @@
+/* 1. איפוס בסיסי - מבטל רווחים מיותרים שהדפדפן מוסיף מעצמו */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. הגדרות כלליות לעמוד */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* גופן נקי שקורא טוב בעברית */
+    background-color: #f4f4f9; /* רקע אפור בהיר מאוד */
+    color: #333; /* טקסט כהה, עדיף על שחור מוחלט לקריאה נוחה */
+    line-height: 1.6;
+}
+
+/* 3. עיצוב החלק העליון (Header) עם Flexbox */
+header {
+    background-color: #2c3e50; /* כחול כהה אלגנטי */
+    color: white;
+    padding: 15px 40px;
+    display: flex; /* מפעיל את כוח הקסם של פלקסבוקס */
+    justify-content: space-between; /* שם את הלוגו בימין ואת התפריט בשמאל (בגלל שהגדרנו rtl ב-HTML) */
+    align-items: center; /* ממרכז את התוכן אנכית */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* צל עדין מתחת לתפריט */
+}
+
+/* 4. עיצוב קישורי הניווט */
+nav a {
+    color: white;
+    text-decoration: none; /* מבטל את הקו התחתון הדיפולטיבי של קישורים */
+    margin-right: 25px; /* יוצר רווח בין קישור לקישור */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* גורם לשינוי הצבע להיות הדרגתי וחלק */
+}
+
+/* 5. אפקט Hover - מה קורה כשהעכבר עובר על הקישור */
+nav a:hover {
+    color: #f1c40f; /* משנה לצבע צהוב-זהב בעת מעבר עכבר */
+}
+
+/* 6. עיצוב אזור הפתיחה (Hero Section) */
+.hero {
+    /* שימוש בגרדיאנט שחור-שקוף מעל התמונה כדי שהטקסט הלבן יבלוט */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
+    background-size: cover; /* התמונה תמתח ותכסה את כל השטח מבלי להתעוות */
+    background-position: center; /* תמיד נראה את מרכז התמונה */
+    height: 400px; /* קובע את גובה האזור */
+    
+    /* שימוש ב-Flexbox למרכוז התוכן */
+    display: flex;
+    flex-direction: column; /* מסדר את הכותרת, הפסקה והכפתור בטור (אחד מתחת לשני) */
+    justify-content: center; /* ממרכז אותם אנכית (למעלה-למטה) */
+    align-items: center; /* ממרכז אותם אופקית (ימינה-שמאלה) */
+    
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+/* 7. עיצוב כפתור הקריאה לפעולה (Call to Action) */
+.btn {
+    display: inline-block;
+    background-color: #e74c3c; /* צבע אדום-כתום שבולט על הרקע הכהה */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none; /* מסיר את הקו התחתון */
+    border-radius: 5px; /* מעגל מעט את הפינות */
+    font-weight: bold;
+    font-size: 1.1rem;
+    /* הכנה לאנימציה חלקה - אחת מדרישות הפרויקט */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+/* 8. אפקטים במעבר עכבר על הכפתור */
+.btn:hover {
+    background-color: #c0392b; /* צבע כהה יותר במעבר עכבר */
+    transform: translateY(-3px); /* אנימציה: הכפתור "קופץ" קצת למעלה */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* מוסיף צל שנותן תחושת תלת-ממד */
+}
+
+/* 9. אזור הספרים המומלצים */
+.featured-books {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.featured-books h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+/* 10. הקסם של CSS Grid */
+.books-grid {
+    display: grid;
+    /* השורה הבאה היא טריק מדהים: היא יוצרת עמודות גמישות שמתאימות את עצמן אוטומטית לרוחב המסך */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* מרווח אחיד בין הכרטיסיות */
+}
+
+/* 11. עיצוב כרטיסיית הספר (Card) */
+.book-card {
+    background-color: white;
+    border-radius: 10px; /* פינות מעוגלות */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* צל עדין */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* הכנה לאנימציה במעבר עכבר */
+}
+
+.book-card:hover {
+    transform: translateY(-8px); /* הכרטיסייה קופצת למעלה */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* הצל גדל ונותן תחושת ריחוף */
+}
+
+/* עיצוב התמונות בתוך הכרטיסיות */
+.book-card img {
+    width: 100%; /* התמונה תתפוס את כל רוחב הכרטיסייה */
+    height: 350px;
+    object-fit: cover; /* מונע מהתמונה להימרח או להתעוות */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book-card .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+/* כפתור קטן ייעודי לכרטיסיות */
+.btn-small {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-small:hover {
+    background-color: #1a252f;
+}
