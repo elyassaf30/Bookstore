@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר | הספרייה</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header קבוע -->
+    <header>
+        <h1>הספרייה של אליאסף</h1>
+        <nav>
+            <a href="index.html">דף הבית</a>
+            <a href="catalog.html">קטלוג ספרים</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="cart.html">עגלת קניות</a>
+        </nav>
+    </header>
+
+    <!-- תוכן העמוד המרכזי -->
+    <main class="contact-container">
+        
+        <h2>דברו איתנו</h2>
+        <p>יש לכם שאלה לגבי ספר מסוים? בעיה בהזמנה? אנחנו כאן כדי לעזור.</p>
+
+        <div class="contact-wrapper">
+            <!-- צד ימין: טופס צור הקשר (HTML Forms) -->
+            <section class="contact-form-section">
+                <!-- שימוש בתגית form. ה-action מכוון לדף ריק כיוון שזה אתר סטטי -->
+                <form action="#" method="get" class="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="fullName">שם מלא:</label>
+                        <!-- שדה טקסט רגיל, required הופך אותו לחובה -->
+                        <input type="text" id="fullName" name="fullName" placeholder="לדוגמה: ישראל ישראלי" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">דואר אלקטרוני:</label>
+                        <!-- type="email" מבטיח שהמשתמש יזין כתובת תקינה -->
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">נושא הפנייה:</label>
+                        <!-- תפריט בחירה מתוך רשימה -->
+                        <select id="subject" name="subject">
+                            <option value="general">שאלה כללית</option>
+                            <option value="order">בירור לגבי הזמנה</option>
+                            <option value="book_request">בקשה לספר חסר</option>
+                            <option value="support">תמיכה טכנית</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">הודעה:</label>
+                        <!-- אזור טקסט רחב -->
+                        <textarea id="message" name="message" rows="5" placeholder="כתבו כאן את שאלתכם..." required></textarea>
+                    </div>
+
+                    <!-- כפתור שליחת הטופס -->
+                    <button type="submit" class="btn">שלח פנייה</button>
+
+                </form>
+            </section>
+
+            <!-- צד שמאל: פרטי התקשרות וסניפים (שימוש ב-HTML Lists) -->
+            <aside class="contact-info">
+                <h3>הסניפים שלנו</h3>
+                <ul class="branches-list">
+                    <li>
+                        <strong>סניף ירושלים (ראשי)</strong><br>
+                        רחוב יפו 42, ירושלים<br>
+                        טלפון: 02-1234567
+                    </li>
+                    <li>
+                        <strong>סניף תל אביב</strong><br>
+                        דיזנגוף סנטר, קומה 2<br>
+                        טלפון: 03-7654321
+                    </li>
+                    <li>
+                        <strong>סניף חיפה</strong><br>
+                        מרכז הכרמל, שדרות מוריה 10<br>
+                        טלפון: 04-9876543
+                    </li>
+                </ul>
+                
+                <div class="opening-hours">
+                    <h4>שעות פעילות:</h4>
+                    <p>א' - ה': 09:00 - 20:00</p>
+                    <p>ו': 09:00 - 14:00</p>
+                </div>
+            </aside>
+        </div>
+
+    </main>
+
+    <!-- Footer קבוע -->
+    <footer>
+        <p>&copy; 2026 הספרייה. כל הזכויות שמורות.</p>
+        <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
+        <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+    </footer>
+
+</body>
+</html>

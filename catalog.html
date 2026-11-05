@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קטלוג ספרים | הספרייה</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header זהה לעמוד הבית -->
+    <header>
+        <h1>הספרייה של אליאסף</h1>
+        <nav>
+            <a href="index.html">דף הבית</a>
+            <a href="catalog.html">קטלוג ספרים</a>
+            <a href="contact.html">צור קשר</a>
+            <a href="cart.html">עגלת קניות</a>
+        </nav>
+    </header>
+
+    <!-- התוכן המרכזי של הקטלוג -->
+    <main class="catalog-container">
+        
+        <!-- סרגל צד - שימוש ב-aside וברשימות (HTML Lists) -->
+        <aside class="sidebar">
+            <h3>סינון לפי קטגוריות</h3>
+            <ul class="category-list">
+                <li><a href="#">כל הספרים</a></li>
+                <li><a href="#">מדעי המחשב ותכנות</a></li>
+                <li><a href="#">מדע בדיוני ופנטזיה</a></li>
+                <li><a href="#">היסטוריה ופילוסופיה</a></li>
+                <li><a href="#">מתח ופעולה</a></li>
+            </ul>
+        </aside>
+
+        <!-- אזור הספרים (שימוש באותו גריד מעמוד הבית) -->
+        <section class="catalog-content">
+            <h2>כל הספרים</h2>
+            
+            <div class="books-grid">
+                <!-- אפשר לשכפל את הכרטיסיות כדי ליצור קטלוג מלא -->
+                <article class="book-card">
+                    <img src="images/books/book1.jpg" alt="1984">
+                    <h3>1984 / ג'ורג' אורוול</h3>
+                    <p class="price">89 ₪</p>
+                    <a href="book.html" class="btn-small">לפרטים</a>
+                </article>
+
+                <article class="book-card">
+                    <img src="images/books/book3.jpg" alt="כריכת הספר שר הטבעות">
+                    <h3>שר הטבעות / ג'.ר.ר. טולקין</h3>
+                    <p class="price">110 ₪</p>
+                    <a href="book.html" class="btn-small">לפרטים</a>
+                </article>
+
+                <article class="book-card">
+                    <img src="images/books/book2.jpg" alt="קיצור תולדות האנושות">
+                    <h3>קיצור תולדות האנושות / יובל נח הררי</h3>
+                    <p class="price">98 ₪</p>
+                    <a href="book.html" class="btn-small">לפרטים</a>
+                </article>
+                
+                <!-- כרטיסיית ספר 4 - פנטזיה -->
+                <article class="book-card">
+                    <img src="images/books/book5.jpg" alt="הארי פוטר ואבן החכמים">
+                    <h3>הארי פוטר ואבן החכמים / ג'יי.קיי רולינג</h3>
+                    <p class="price">85 ₪</p>
+                    <a href="book.html" class="btn-small">לפרטים</a>
+                </article>
+
+                <!-- כרטיסיית ספר 5 - פסיכולוגיה/מדע -->
+                <article class="book-card">
+                    <img src="images/books/book6.jpg" alt="לחשוב מהר לחשוב לאט">
+                    <h3>לחשוב מהר, לחשוב לאט / דניאל כהנמן</h3>
+                    <p class="price">105 ₪</p>
+                    <a href="book.html" class="btn-small">לפרטים</a>
+                </article>
+
+                <!-- כרטיסיית ספר 6 - תכנות -->
+                <article class="book-card">
+                    <img src="images/books/book7.jpg" alt="Cracking the Coding Interview">
+                    <h3>Cracking the Coding Interview / גייל לאקמן מקדואל</h3>
+                    <p class="price">160 ₪</p>
+                    <a href="book.html" class="btn-small">לפרטים</a>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer זהה לעמוד הבית -->
+    <footer>
+        <p>&copy; 2026 הספרייה. כל הזכויות שמורות.</p>
+        <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
+        <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+    </footer>
+
+</body>
+</html>
