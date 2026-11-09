@@ -9,8 +9,8 @@
 <body>
 
     <!-- Header זהה לעמוד הבית -->
-    <header>
-        <h1>הספרייה של אליסף ולוי</h1>
+     <header>
+        <h1>עמוד ראשון</h1>
         <nav>
             <a href="index.html">דף הבית</a>
             <a href="catalog.html">קטלוג ספרים</a>
@@ -34,12 +34,14 @@
             </ul>
         </aside>
 
-        <!-- אזור הספרים (שימוש באותו גריד מעמוד הבית) -->
+        <!-- אזור הספרים (שימוש בגריד) -->
         <section class="catalog-content">
             <h2>כל הספרים</h2>
             
             <div class="books-grid">
-                <!-- אפשר לשכפל את הכרטיסיות כדי ליצור קטלוג מלא -->
+                <!-- קטלוג מלא -->
+
+                <!-- כרטיסיית ספר 1 - פסיכולוגיה -->
                 <article class="book-card">
                     <img src="images/books/book1.jpg" alt="1984">
                     <h3>1984 / ג'ורג' אורוול</h3>
@@ -47,15 +49,20 @@
                     <a href="book.html" class="btn-small">לפרטים</a>
                 </article>
 
+                <!-- כרטיסיית ספר 2 - מדע בדיוני-->
                 <article class="book-card">
-                    <img src="images/books/book3.jpg" alt="כריכת הספר שר הטבעות">
+                    <img src="images/books/book3.jpg" alt="שר הטבעות">
                     <h3>שר הטבעות / ג'.ר.ר. טולקין</h3>
                     <p class="price">110 ₪</p>
                     <a href="book.html" class="btn-small">לפרטים</a>
                 </article>
 
+                <!-- כרטיסיית ספר 3 - פסיכולוגיה-->
                 <article class="book-card">
-                    <img src="images/books/book2.jpg" alt="קיצור תולדות האנושות">
+                    <div class="image-wrapper">
+                        <span class="out-of-stock-text">אזל מהמלאי</span>
+                         <img src="images/books/book2.jpg" alt="קיצור תולדות האנושות">
+                    </div>
                     <h3>קיצור תולדות האנושות / יובל נח הררי</h3>
                     <p class="price">98 ₪</p>
                     <a href="book.html" class="btn-small">לפרטים</a>
@@ -71,7 +78,10 @@
 
                 <!-- כרטיסיית ספר 5 - פסיכולוגיה/מדע -->
                 <article class="book-card">
-                    <img src="images/books/book6.jpg" alt="לחשוב מהר לחשוב לאט">
+                    <div class="image-wrapper">
+                        <span class="out-of-stock-text">אזל מהמלאי</span>
+                        <img src="images/books/book6.jpg" alt="לחשוב מהר לחשוב לאט">
+                    </div>   
                     <h3>לחשוב מהר, לחשוב לאט / דניאל כהנמן</h3>
                     <p class="price">105 ₪</p>
                     <a href="book.html" class="btn-small">לפרטים</a>
@@ -93,6 +103,7 @@
     <!-- Footer זהה לעמוד הבית -->
     <footer>
         <p>&copy; 2026 הספרייה. כל הזכויות שמורות.</p>
+        <p>אליסף & לוי</p>
         <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
         <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
     </footer>

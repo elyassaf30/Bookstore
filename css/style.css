@@ -159,6 +159,38 @@ nav a:hover {
 .btn-small:hover {
     background-color: #1a252f;
 }
+
+/* מעטפת לתמונה כדי לאפשר מיקום של כיתוב "אזל מהמלאי" */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.image-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+/* עיצוב הטקסט האדום שיושב על התמונה */
+.out-of-stock-text {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    left: 0;
+    text-align: center;
+
+    color: #ff0000; /* אדום בוהק */
+    font-weight: bold;
+    font-size: 1.7rem;
+    z-index: 2;
+
+    /* הוספות לשדרוג העיצוב */
+    background-color: rgba(250, 246, 9, 0.7); /* רקע לבן כמעט אטום */
+    padding: 2px 2px;
+    border-radius: 4px; /* פינות מעוגלות עדינות */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* צל עדין מסביב לתווית */
+}
+
 /* =========================================
    12. התאמה לטאבלטים ומסכים בינוניים (עד 768 פיקסלים)
    ========================================= */
