@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>צור קשר | הספרייה</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <script src="https://kit.fontawesome.com/bea1a72fe1.js" crossorigin="anonymous"></script>
 
-    <!-- Header קבוע -->
-     <header>
-        <h1>עמוד ראשון</h1>
+</head>
+
+<body>
+    <!-- Main site header and navigation -->
+    <header>
+        <h1>צור קשר</h1>
         <nav>
             <a href="index.html">דף הבית</a>
             <a href="catalog.html">קטלוג ספרים</a>
@@ -18,34 +21,29 @@
             <a href="cart.html">עגלת קניות</a>
         </nav>
     </header>
-
-    <!-- תוכן העמוד המרכזי -->
+    <!-- Contact form and store information -->
     <main class="contact-container">
-        
+
         <h2>דברו איתנו</h2>
         <p>יש לכם שאלה לגבי ספר מסוים? בעיה בהזמנה? אנחנו כאן כדי לעזור.</p>
 
         <div class="contact-wrapper">
-            <!-- צד ימין: טופס צור הקשר (HTML Forms) -->
+            <!-- Contact form -->
             <section class="contact-form-section">
-                <!-- שימוש בתגית form. ה-action מכוון לדף ריק כיוון שזה אתר סטטי -->
                 <form action="#" method="get" class="contact-form">
-                    
+
                     <div class="form-group">
                         <label for="fullName">שם מלא:</label>
-                        <!-- שדה טקסט רגיל, required הופך אותו לחובה -->
                         <input type="text" id="fullName" name="fullName" placeholder="לדוגמה: ישראל ישראלי" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">דואר אלקטרוני:</label>
-                        <!-- type="email" מבטיח שהמשתמש יזין כתובת תקינה -->
                         <input type="email" id="email" name="email" placeholder="example@email.com" required>
                     </div>
 
                     <div class="form-group">
                         <label for="subject">נושא הפנייה:</label>
-                        <!-- תפריט בחירה מתוך רשימה -->
                         <select id="subject" name="subject">
                             <option value="general">שאלה כללית</option>
                             <option value="order">בירור לגבי הזמנה</option>
@@ -56,17 +54,13 @@
 
                     <div class="form-group">
                         <label for="message">הודעה:</label>
-                        <!-- אזור טקסט רחב -->
-                        <textarea id="message" name="message" rows="5" placeholder="כתבו כאן את שאלתכם..." required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="כתבו כאן את שאלתכם..."
+                            required></textarea>
                     </div>
-
-                    <!-- כפתור שליחת הטופס -->
                     <button type="submit" class="btn">שלח פנייה</button>
 
                 </form>
             </section>
-
-            <!-- צד שמאל: פרטי התקשרות וסניפים (שימוש ב-HTML Lists) -->
             <aside class="contact-info">
                 <h3>הסניפים שלנו</h3>
                 <ul class="branches-list">
@@ -86,7 +80,7 @@
                         טלפון: 04-9876543
                     </li>
                 </ul>
-                
+
                 <div class="opening-hours">
                     <h4>שעות פעילות:</h4>
                     <p>א' - ה': 09:00 - 20:00</p>
@@ -96,14 +90,20 @@
         </div>
 
     </main>
-
-    <!-- Footer קבוע -->
+    <!-- Site footer -->
     <footer>
         <p>&copy; 2026 הספרייה. כל הזכויות שמורות.</p>
         <p>אליסף & לוי</p>
-        <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
-        <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+            פייסבוק
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+            אינסטגרם
+        </a>
     </footer>
 
 </body>
+
 </html>

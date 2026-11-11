@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>עגלת קניות | הספרייה</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/bea1a72fe1.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-    <!-- Header קבוע -->
-     <header>
-        <h1>עמוד ראשון</h1>
+<body>
+    <!-- Main site header and navigation -->
+    <header>
+        <h1>עגלת קניות</h1>
         <nav>
             <a href="index.html">דף הבית</a>
             <a href="catalog.html">קטלוג ספרים</a>
@@ -18,33 +20,26 @@
             <a href="cart.html">עגלת קניות</a>
         </nav>
     </header>
-
-    <!-- תוכן העגלה -->
+    <!-- Shopping cart content -->
     <main class="cart-container">
-        
+
         <h2>עגלת הקניות שלך</h2>
 
         <div class="cart-wrapper">
-            
-            <!-- אזור המוצרים בעגלה -->
+            <!-- Items and order summary -->
             <section class="cart-items-section">
-                
-                <!-- פריט ראשון בעגלה -->
                 <div class="cart-item">
                     <img src="images/books/book1.jpg" alt="1984" class="cart-item-img">
                     <div class="cart-item-details">
                         <h3>1984 / ג'ורג' אורוול</h3>
                         <p class="item-price">89 ₪</p>
                     </div>
-                    <!-- שימוש בשדה קלט מסוג מספר לכמות -->
                     <div class="cart-item-quantity">
                         <label for="qty1">כמות:</label>
                         <input type="number" id="qty1" name="qty1" value="1" min="1" max="10">
                     </div>
                     <button class="remove-btn">הסר</button>
                 </div>
-
-                <!-- פריט שני בעגלה -->
                 <div class="cart-item">
                     <img src="images/books/book2.jpg" alt="קיצור תולדות האנושות" class="cart-item-img">
                     <div class="cart-item-details">
@@ -59,11 +54,9 @@
                 </div>
 
             </section>
-
-            <!-- אזור סיכום הזמנה -->
             <aside class="cart-summary">
                 <h3>סיכום הזמנה</h3>
-                
+
                 <div class="summary-line">
                     <span>סכום ביניים:</span>
                     <span>285 ₪</span>
@@ -77,21 +70,27 @@
                     <span>סך הכל לתשלום:</span>
                     <span>310 ₪</span>
                 </div>
-                
+
                 <a href="#" class="btn checkout-btn">מעבר לתשלום</a>
             </aside>
 
         </div>
 
     </main>
-
-    <!-- Footer קבוע -->
+    <!-- Site footer -->
     <footer>
         <p>&copy; 2026 הספרייה. כל הזכויות שמורות.</p>
         <p>אליסף & לוי</p>
-        <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
-        <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+            פייסבוק
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+            אינסטגרם
+        </a>
     </footer>
 
 </body>
+
 </html>

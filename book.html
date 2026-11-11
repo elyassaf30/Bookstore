@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1984 / ג'ורג' אורוול | הספרייה</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/bea1a72fe1.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-    <!-- Header קבוע -->
-     <header>
-        <h1>עמוד ראשון</h1>
+<body>
+    <!-- Main site header and navigation -->
+    <header>
+        <h1>1984 / ג'ורג' אורוול</h1>
         <nav>
             <a href="index.html">דף הבית</a>
             <a href="catalog.html">קטלוג ספרים</a>
@@ -18,32 +20,26 @@
             <a href="cart.html">עגלת קניות</a>
         </nav>
     </header>
-
-    <!-- תוכן עמוד הספר -->
+    <!-- Single book details -->
     <main class="single-book-container">
-        
-        <!-- חלק עליון: תמונה ותקציר (ישמש כ-Flexbox) -->
         <section class="book-intro">
             <div class="book-cover">
                 <img src="images/books/book1.jpg" alt="כריכת הספר 1984">
             </div>
-            
+
             <div class="book-info">
                 <h2>1984</h2>
                 <h3 class="author">מאת: ג'ורג' אורוול</h3>
                 <p class="price">89 ₪</p>
-                
+
                 <p class="description">
-                    "1984", יצירת המופת הדיסטופית של ג'ורג' אורוול, מתארת חברה טוטליטרית עתידנית הנשלטת על ידי "האח הגדול". 
+                    "1984", יצירת המופת הדיסטופית של ג'ורג' אורוול, מתארת חברה טוטליטרית עתידנית הנשלטת על ידי "האח
+                    הגדול".
                     הספר עוקב אחר וינסטון סמית', פקיד זוטר במשרד האמת, שמתחיל לפקפק במפלגה ובמנגנוני השליטה שלה.
                 </p>
-                
-                <!-- כפתור הוספה לעגלה (כרגע סטטי) -->
                 <a href="cart.html" class="btn">הוסף לעגלת הקניות</a>
             </div>
         </section>
-
-        <!-- חלק אמצעי: טבלת נתונים (HTML Tables) -->
         <section class="book-details">
             <h3>פרטים טכניים</h3>
             <table class="info-table">
@@ -69,40 +65,42 @@
                 </tr>
             </table>
         </section>
-
-        <!-- חלק תחתון: מדיה מגוונת (Iframe + Audio) -->
+        <!-- Book media -->
         <section class="book-media">
             <div class="media-column">
                 <h3>האזן לפרק הראשון (Audiobook)</h3>
-                <!-- שימוש בתגית שמע (HTML Media) -->
                 <audio controls>
                     <source src="media/audiobook.m4a" type="audio/mpeg">
-                    הדפדפן שלך לא תומך בנגן שמע.
                 </audio>
             </div>
 
             <div class="media-column">
                 <h3>טריילר (מתוך הסרט)</h3>
-                <!-- שימוש ביוטיוב מובנה (HTML Iframe) -->
                 <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z4rBDUJTnNU" 
-                            title="1984 Trailer" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z4rBDUJTnNU"
+                        title="1984 Trailer" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
                     </iframe>
                 </div>
             </div>
         </section>
 
     </main>
-
-    <!-- Footer קבוע -->
+    <!-- Site footer -->
     <footer>
         <p>&copy; 2026 הספרייה. כל הזכויות שמורות.</p>
         <p>אליסף & לוי</p>
-        <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
-        <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+            פייסבוק
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+            אינסטגרם
+        </a>
     </footer>
 
 </body>
+
 </html>

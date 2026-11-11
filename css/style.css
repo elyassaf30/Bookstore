@@ -1,57 +1,50 @@
-/* 1. איפוס בסיסי - מבטל רווחים מיותרים שהדפדפן מוסיף מעצמו */
+
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* 2. הגדרות כלליות לעמוד */
+/* Page-wide styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* גופן נקי שקורא טוב בעברית */
-    background-color: #f4f4f9; /* רקע אפור בהיר מאוד */
-    color: #333; /* טקסט כהה, עדיף על שחור מוחלט לקריאה נוחה */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
     line-height: 1.6;
 }
-
-/* 3. עיצוב החלק העליון (Header) עם Flexbox */
+/* Header and navigation */
 header {
-    background-color: #2c3e50; /* כחול כהה אלגנטי */
+    background-color: #2c3e50;
     color: white;
     padding: 15px 40px;
-    display: flex; /* מפעיל את כוח הקסם של פלקסבוקס */
-    justify-content: space-between; /* שם את הלוגו בימין ואת התפריט בשמאל (בגלל שהגדרנו rtl ב-HTML) */
-    align-items: center; /* ממרכז את התוכן אנכית */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* צל עדין מתחת לתפריט */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
-/* 4. עיצוב קישורי הניווט */
 nav a {
     color: white;
-    text-decoration: none; /* מבטל את הקו התחתון הדיפולטיבי של קישורים */
-    margin-right: 25px; /* יוצר רווח בין קישור לקישור */
+    text-decoration: none;
+    margin-right: 25px;
     font-weight: bold;
     font-size: 1.1rem;
-    transition: color 0.3s ease; /* גורם לשינוי הצבע להיות הדרגתי וחלק */
+    transition: color 0.3s ease;
 }
-
-/* 5. אפקט Hover - מה קורה כשהעכבר עובר על הקישור */
 nav a:hover {
-    color: #f1c40f; /* משנה לצבע צהוב-זהב בעת מעבר עכבר */
+    color: #f1c40f;
 }
-
-/* 6. עיצוב אזור הפתיחה (Hero Section) */
+/* Homepage hero section */
 .hero {
-    /* שימוש בגרדיאנט שחור-שקוף מעל התמונה כדי שהטקסט הלבן יבלוט */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
-    background-size: cover; /* התמונה תמתח ותכסה את כל השטח מבלי להתעוות */
-    background-position: center; /* תמיד נראה את מרכז התמונה */
-    height: 400px; /* קובע את גובה האזור */
-    
-    /* שימוש ב-Flexbox למרכוז התוכן */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 400px;
     display: flex;
-    flex-direction: column; /* מסדר את הכותרת, הפסקה והכפתור בטור (אחד מתחת לשני) */
-    justify-content: center; /* ממרכז אותם אנכית (למעלה-למטה) */
-    align-items: center; /* ממרכז אותם אופקית (ימינה-שמאלה) */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
     text-align: center;
     color: white;
@@ -67,29 +60,22 @@ nav a:hover {
     font-size: 1.3rem;
     margin-bottom: 25px;
 }
-
-/* 7. עיצוב כפתור הקריאה לפעולה (Call to Action) */
 .btn {
     display: inline-block;
-    background-color: #e74c3c; /* צבע אדום-כתום שבולט על הרקע הכהה */
+    background-color: #e74c3c;
     color: white;
     padding: 12px 30px;
-    text-decoration: none; /* מסיר את הקו התחתון */
-    border-radius: 5px; /* מעגל מעט את הפינות */
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
     font-size: 1.1rem;
-    /* הכנה לאנימציה חלקה - אחת מדרישות הפרויקט */
     transition: background-color 0.3s ease, transform 0.2s ease; 
 }
-
-/* 8. אפקטים במעבר עכבר על הכפתור */
 .btn:hover {
-    background-color: #c0392b; /* צבע כהה יותר במעבר עכבר */
-    transform: translateY(-3px); /* אנימציה: הכפתור "קופץ" קצת למעלה */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* מוסיף צל שנותן תחושת תלת-ממד */
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-
-/* 9. אזור הספרים המומלצים */
 .featured-books {
     padding: 60px 40px;
     text-align: center;
@@ -100,34 +86,28 @@ nav a:hover {
     margin-bottom: 40px;
     color: #2c3e50;
 }
-
-/* 10. הקסם של CSS Grid */
+/* Book cards and grid layout */
 .books-grid {
     display: grid;
-    /* השורה הבאה היא טריק מדהים: היא יוצרת עמודות גמישות שמתאימות את עצמן אוטומטית לרוחב המסך */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* מרווח אחיד בין הכרטיסיות */
+    gap: 30px;
 }
-
-/* 11. עיצוב כרטיסיית הספר (Card) */
 .book-card {
     background-color: white;
-    border-radius: 10px; /* פינות מעוגלות */
+    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* צל עדין */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* הכנה לאנימציה במעבר עכבר */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book-card:hover {
-    transform: translateY(-8px); /* הכרטיסייה קופצת למעלה */
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* הצל גדל ונותן תחושת ריחוף */
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
-
-/* עיצוב התמונות בתוך הכרטיסיות */
 .book-card img {
-    width: 100%; /* התמונה תתפוס את כל רוחב הכרטיסייה */
+    width: 100%;
     height: 350px;
-    object-fit: cover; /* מונע מהתמונה להימרח או להתעוות */
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
 }
@@ -144,8 +124,6 @@ nav a:hover {
     color: #e74c3c;
     margin-bottom: 20px;
 }
-
-/* כפתור קטן ייעודי לכרטיסיות */
 .btn-small {
     display: inline-block;
     background-color: #2c3e50;
@@ -160,7 +138,6 @@ nav a:hover {
     background-color: #1a252f;
 }
 
-/* מעטפת לתמונה כדי לאפשר מיקום של כיתוב "אזל מהמלאי" */
 .image-wrapper {
     position: relative;
     width: 100%;
@@ -170,8 +147,6 @@ nav a:hover {
     width: 100%;
     display: block;
 }
-
-/* עיצוב הטקסט האדום שיושב על התמונה */
 .out-of-stock-text {
     position: absolute;
     top: 25%;
@@ -179,36 +154,27 @@ nav a:hover {
     left: 0;
     text-align: center;
 
-    color: #ff0000; /* אדום בוהק */
+    color: #ff0000;
     font-weight: bold;
     font-size: 1.7rem;
     z-index: 2;
-
-    /* הוספות לשדרוג העיצוב */
-    background-color: rgba(250, 246, 9, 0.7); /* רקע לבן כמעט אטום */
+    background-color: rgba(250, 246, 9, 0.7);
     padding: 2px 2px;
-    border-radius: 4px; /* פינות מעוגלות עדינות */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* צל עדין מסביב לתווית */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* =========================================
-   12. התאמה לטאבלטים ומסכים בינוניים (עד 768 פיקסלים)
-   ========================================= */
+/* Tablet and mobile layout */
 @media (max-width: 768px) {
-    /* הופכים את ההידר לטור במקום שורה */
     header {
         flex-direction: column;
         padding: 15px 20px;
         text-align: center;
     }
-
-    /* מוסיפים רווח מתחת ללוגו לפני התפריט */
     header h1 {
         margin-bottom: 15px;
         font-size: 1.8rem;
     }
-
-    /* מסדרים את הקישורים כך שיגלשו יפה לשורה הבאה אם אין מקום */
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -217,11 +183,9 @@ nav a:hover {
     }
 
     nav a {
-        margin-right: 0; /* מאפסים את הרווח הקודם כדי שה-gap יעבוד נכון */
+        margin-right: 0;
         font-size: 1rem;
     }
-
-    /* מקטינים קצת את אזור ה-Hero והטקסטים */
     .hero {
         height: 320px;
         padding: 20px 10px;
@@ -234,50 +198,44 @@ nav a:hover {
     .hero p {
         font-size: 1.1rem;
     }
-
-    /* בתוך הבלוק הקיים של 768px: */
-    .catalog-container {
-        flex-direction: column; /* שובר את השורה - סרגל הצד יעלה מעל הספרים */
+    /* Catalog page */
+.catalog-container {
+        flex-direction: column;
         padding: 20px;
     }
     
     .sidebar {
         flex: 1;
-        width: 100%; /* סרגל הצד יתפוס את כל הרוחב במובייל */
+        width: 100%;
     }
-
-    /* בתוך הבלוק הקיים של 768px: */
     .book-intro, .book-media {
-        flex-direction: column; /* גם למעלה וגם למטה - התמונה/הסרטון יהיו מעל הטקסט במקום לצידו */
+        flex-direction: column;
         gap: 20px;
     }
 
     .book-cover {
         flex: 1;
-        max-width: 100%; /* התמונה תתרחב לרוחב מלא בנייד */
+        max-width: 100%;
     }
-
-    /* בתוך הבלוק הקיים של 768px: */
     .contact-wrapper {
-        flex-direction: column; /* במסך קטן, פרטי הקשר ירדו מתחת לטופס */
+        flex-direction: column;
         gap: 30px;
     }
     
     .contact-form-section, .contact-info {
         padding: 25px;
     }
-    /* בתוך הבלוק הקיים של 768px: */
     .cart-wrapper {
         flex-direction: column;
     }
     
     .cart-summary {
-        position: static; /* מבטל את ההידבקות במסכים קטנים */
+        position: static;
         width: 100%;
     }
     
     .cart-item {
-        flex-direction: column; /* מסדר את פרטי הספר אחד מתחת לשני */
+        flex-direction: column;
         text-align: center;
     }
     
@@ -285,12 +243,7 @@ nav a:hover {
         margin: 15px 0;
     }
 }
-
-/* =========================================
-   13. התאמה לטלפונים ניידים קטנים (עד 480 פיקסלים)
-   ========================================= */
 @media (max-width: 480px) {
-    /* הקטנה נוספת של הכותרות למסכים ממש קטנים */
     .hero h2 {
         font-size: 1.8rem;
     }
@@ -303,20 +256,14 @@ nav a:hover {
         font-size: 1.8rem;
     }
 }
-
-/* =========================================
-   14. פריסת עמוד הקטלוג (שילוב Flexbox עם ה-Grid הקיים)
-   ========================================= */
 .catalog-container {
     display: flex;
     padding: 40px;
-    gap: 40px; /* מרווח בין סרגל הצד לאזור הספרים */
-    align-items: flex-start; /* מונע מסרגל הצד להימתח לגובה העמוד כולו */
+    gap: 40px;
+    align-items: flex-start;
 }
-
-/* עיצוב סרגל הצד (aside) */
 .sidebar {
-    flex: 0 0 250px; /* מקבע את רוחב סרגל הצד ל-250 פיקסלים בדיוק */
+    flex: 0 0 250px;
     background-color: white;
     padding: 25px;
     border-radius: 8px;
@@ -329,10 +276,8 @@ nav a:hover {
     border-bottom: 2px solid #e74c3c;
     padding-bottom: 10px;
 }
-
-/* עיצוב הרשימה (HTML Lists) */
 .category-list {
-    list-style-type: none; /* מסיר את הנקודות השחורות הדיפולטיביות של הרשימה */
+    list-style-type: none;
 }
 
 .category-list li {
@@ -344,15 +289,13 @@ nav a:hover {
     color: #333;
     font-size: 1.1rem;
     transition: color 0.3s;
-    display: block; /* הופך את כל שורת הקישור ללחיצה */
+    display: block;
 }
 
 .category-list a:hover {
     color: #e74c3c;
-    padding-right: 5px; /* אפקט תזוזה קל ימינה במעבר עכבר */
+    padding-right: 5px;
 }
-
-/* אזור הספרים מתרחב ותופס את שאר המקום */
 .catalog-content {
     flex: 1;
 }
@@ -361,17 +304,12 @@ nav a:hover {
     margin-bottom: 30px;
     color: #2c3e50;
 }
-
-/* =========================================
-   15. עיצוב עמוד ספר בודד (book.html)
-   ========================================= */
+/* Single book page */
 .single-book-container {
     max-width: 1000px;
-    margin: 40px auto; /* ממרכז את התוכן במסכים רחבים */
+    margin: 40px auto;
     padding: 0 20px;
 }
-
-/* אזור עליון - Flexbox */
 .book-intro {
     display: flex;
     gap: 40px;
@@ -379,7 +317,7 @@ nav a:hover {
 }
 
 .book-cover {
-    flex: 0 0 300px; /* התמונה תתפוס רוחב קבוע */
+    flex: 0 0 300px;
 }
 
 .book-cover img {
@@ -389,7 +327,7 @@ nav a:hover {
 }
 
 .book-info {
-    flex: 1; /* אזור הטקסט יתפוס את כל שאר המקום */
+    flex: 1;
 }
 
 .book-info h2 {
@@ -417,8 +355,6 @@ nav a:hover {
     line-height: 1.8;
     margin-bottom: 30px;
 }
-
-/* עיצוב הטבלה (HTML Tables) */
 .book-details {
     margin-bottom: 50px;
 }
@@ -430,7 +366,7 @@ nav a:hover {
 
 .info-table {
     width: 100%;
-    border-collapse: collapse; /* מחבר את הקווים של הטבלה לקו אחיד */
+    border-collapse: collapse;
     background-color: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
@@ -444,14 +380,12 @@ nav a:hover {
 .info-table th {
     background-color: #2c3e50;
     color: white;
-    width: 30%; /* העמודה של הכותרות תתפוס 30% מהרוחב */
+    width: 30%;
 }
 
 .info-table tr:nth-child(even) {
-    background-color: #f9f9f9; /* אפקט "זברה" לשורות זוגיות */
+    background-color: #f9f9f9;
 }
-
-/* אזור המדיה (שמע ווידאו) */
 .book-media {
     display: flex;
     gap: 40px;
@@ -465,11 +399,9 @@ nav a:hover {
     margin-bottom: 15px;
     color: #2c3e50;
 }
-
-/* טריק כדי שסרטון היוטיוב יתאים את עצמו למסך (רספונסיבי) */
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* יחס תמונה 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -484,13 +416,10 @@ nav a:hover {
 }
 
 audio {
-    width: 100%; /* הנגן יתפוס את כל רוחב העמודה */
+    width: 100%;
     outline: none;
 }
-
-/* =========================================
-   16. עיצוב עמוד צור קשר (contact.html)
-   ========================================= */
+/* Contact page */
 .contact-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -510,16 +439,12 @@ audio {
     margin-bottom: 40px;
     color: #666;
 }
-
-/* סידור פריסת העמוד - הטופס מימין, פרטי הקשר משמאל */
 .contact-wrapper {
     display: flex;
     gap: 50px;
 }
-
-/* עיצוב אזור הטופס */
 .contact-form-section {
-    flex: 2; /* הטופס יתפוס פי 2 מקום מסרגל הצד */
+    flex: 2;
     background-color: white;
     padding: 40px;
     border-radius: 8px;
@@ -531,30 +456,26 @@ audio {
 }
 
 .form-group label {
-    display: block; /* הלייבל יהיה מעל שדה ההזנה, לא באותה שורה */
+    display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: #333;
 }
-
-/* עיצוב שדות ההזנה - טקסט, אימייל, בחירה ואזור טקסט */
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%; /* השדות יתפסו את כל רוחב האזור שלהם */
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: inherit; /* יורש את הגופן של האתר, ולא גופן ברירת מחדל של דפדפן */
+    font-family: inherit;
     font-size: 1rem;
 }
-
-/* שינוי עיצוב קל כשלוחצים על השדה (Focus) */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: #2c3e50;
-    outline: none; /* מסיר את המסגרת הכחולה הרגילה של הדפדפן */
+    outline: none;
     box-shadow: 0 0 5px rgba(44, 62, 80, 0.2);
 }
 
@@ -566,8 +487,6 @@ audio {
     padding: 15px;
     margin-top: 10px;
 }
-
-/* עיצוב סרגל הצד של פרטי ההתקשרות */
 .contact-info {
     flex: 1;
     background-color: #2c3e50;
@@ -583,7 +502,7 @@ audio {
 }
 
 .branches-list {
-    list-style-type: none; /* רשימה ללא נקודות */
+    list-style-type: none;
     margin-bottom: 30px;
 }
 
@@ -596,10 +515,7 @@ audio {
     color: #f1c40f;
     margin-bottom: 10px;
 }
-
-/* =========================================
-   17. עיצוב עמוד עגלת קניות (cart.html)
-   ========================================= */
+/* Cart page */
 .cart-container {
     max-width: 1100px;
     margin: 50px auto;
@@ -613,8 +529,6 @@ audio {
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
 }
-
-/* פריסת העגלה - רשימת המוצרים מול סיכום ההזמנה */
 .cart-wrapper {
     display: flex;
     gap: 40px;
@@ -622,10 +536,8 @@ audio {
 }
 
 .cart-items-section {
-    flex: 2; /* המוצרים תופסים יותר מקום מסיכום ההזמנה */
+    flex: 2;
 }
-
-/* עיצוב פריט בודד בעגלה באמצעות Flexbox */
 .cart-item {
     display: flex;
     align-items: center;
@@ -645,7 +557,7 @@ audio {
 }
 
 .cart-item-details {
-    flex: 1; /* לוקח את המקום הפנוי באמצע */
+    flex: 1;
 }
 
 .cart-item-details h3 {
@@ -659,8 +571,6 @@ audio {
     font-weight: bold;
     font-size: 1.2rem;
 }
-
-/* עיצוב שדה שינוי הכמות */
 .cart-item-quantity input {
     width: 60px;
     padding: 5px;
@@ -669,8 +579,6 @@ audio {
     border-radius: 4px;
     text-align: center;
 }
-
-/* כפתור ההסרה */
 .remove-btn {
     background-color: transparent;
     color: #7f8c8d;
@@ -686,15 +594,13 @@ audio {
     color: white;
     border-color: #c0392b;
 }
-
-/* עיצוב קופסת סיכום ההזמנה (aside) */
 .cart-summary {
     flex: 1;
     background-color: #2c3e50;
     color: white;
     padding: 30px;
     border-radius: 8px;
-    position: sticky; /* טריק: התיבה תישאר דבוקה למסך גם אם גוללים למטה */
+    position: sticky;
     top: 20px;
 }
 
@@ -706,7 +612,7 @@ audio {
 
 .summary-line {
     display: flex;
-    justify-content: space-between; /* מרחיק את הטקסט והמחיר לקצוות */
+    justify-content: space-between;
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
@@ -719,44 +625,52 @@ audio {
 .summary-line.total {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #f1c40f; /* צבע צהוב-זהב לבולטות */
+    color: #f1c40f;
 }
 
 .checkout-btn {
     display: block;
     text-align: center;
     margin-top: 25px;
-    background-color: #27ae60; /* כפתור ירוק למעבר לתשלום */
+    background-color: #27ae60;
 }
 
 .checkout-btn:hover {
     background-color: #219a52;
 }
 
-/* =========================================
-   עיצוב תחתית העמוד (Footer)
-   ========================================= */
+/* Site footer */
 footer {
-    background-color: #2c3e50; /* צבע כחול-כהה תואם ל-Header */
-    color: white; /* טקסט לבן לקריאות */
-    text-align: center; /* ממרכז את כל התוכן */
-    padding: 40px 20px; /* מוסיף מרווח נשימה למעלה ולמטה */
-    margin-top: 60px; /* דוחף את ה-Footer למטה כדי שלא יידבק לתוכן העמוד */
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
 footer p {
     font-size: 1.1rem;
-    margin-bottom: 20px; /* מפריד בין שורת הזכויות לקישורים */
+    margin-bottom: 20px;
 }
 
 footer a {
-    color: #f1c40f; /* צבע צהוב-זהב שמשתלב מעולה עם כחול כהה */
-    text-decoration: none; /* מסיר את הקו התחתון המכוער */
-    margin: 0 15px; /* יוצר רווח יפה בין קישור לקישור */
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 15px;
     font-size: 1.2rem;
-    transition: color 0.3s ease; /* אנימציה חלקה לשינוי צבע */
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: white; /* במעבר עכבר הקישור יהפוך ללבן */
+    color: white;
+}
+
+.fa-facebook{
+    margin-right: 8px;
+    color: #3b5998;
+}
+
+.fa-instagram{
+    margin-right: 8px;
+    color: #e4405f;
 }
